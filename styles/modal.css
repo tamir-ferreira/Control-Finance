@@ -1,0 +1,86 @@
+.container-modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-grey-1-opacity-5);
+    display: none;
+    /* transform: translateY(-100vh); */
+    /* transition: 2s ease; */
+}
+
+.show-modal {
+    animation: animateModal var(--animation-duration) var(--animation-type);
+    display: flex;
+}
+
+.modal {
+    /* border: 1px solid red; */
+    width: 26.75rem;
+    margin: 0 auto;
+    border-radius: var(--radius-1);
+    background-color: var(--fixed-white);
+    padding: 1.5rem;
+    box-shadow: 2px 2px 5px var(--color-grey-1);
+}
+
+.header-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-modal button {
+    width: 2.18rem;
+    height: 1.875rem;
+    border-radius: var(--radius-2);
+
+}
+
+.modal p {
+    margin: 1.56rem 0 1.56rem 0;
+}
+
+.modal input {
+    border: 1.5px solid var(--color-grey-3);
+    border-radius: var(--radius-1);
+    height: 2.75rem;
+    width: 100%;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+    font-size: var(--font-size-3);
+}
+
+.modal input:focus {
+    border-color: var(--color-brand-1);
+    outline: none;
+}
+
+.type-value {
+    display: flex;
+    margin: 1.25rem 0 1.25rem 0;
+    align-items: center;
+    gap: 1rem;
+}
+
+.buttons-modal {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+@keyframes animateModal {
+    0% {
+      opacity: 0;
+      transform: translateY(-100vh);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px)
+    }
+  }

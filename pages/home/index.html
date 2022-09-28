@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,83 @@
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
     <meta name="description" content="Control Finance - Seu controle financeiro">
     <link rel="stylesheet" href="/styles/globalStyles.css">
+    <link rel="stylesheet" href="/styles/cards.css">
+    <link rel="stylesheet" href="/styles/filter-totalizer.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+    <link rel="stylesheet" href="/styles/navbar.css">
     <link rel="stylesheet" href="index.css">
+    <script defer src="/scripts/modal.js"></script>
+    <script defer src="valuesData.js"></script>
+    <script defer src="index.js"></script>
 </head>
+
 <body>
-    <main id="app"></main>
-    <script src="/scripts/modal.js"></script>
-    <script src="valuesData.js"></script>
-    <script src="index.js"></script>
+    <header>
+        <nav class="container">
+            <h1>Control <span>Finance</span></h1>
+            <button class="button-primary">Registrar novo valor</button>
+        </nav>
+    </header>
+
+    <main class="container" id="app">
+        <section class="section-filter">
+            <h2>Resumo financeiro</h2>
+            <ul class="list-filter">
+                <li><button class="button-outline">Todos</button></li>
+                <li><button class="button-outline">Entradas</button></li>
+                <li><button class="button-outline">Saídas</button></li>
+            </ul>
+        </section>
+        <section class="totalizer">
+            <h3>Soma dos valores</h3>
+            <span>R$ 969,00</span>
+        </section>
+        <section class="section-cards">
+            <div class="empty-list">
+                <h3>Nenhum valor cadastrado</h3>
+                <p>Registrar novo valor</p>
+            </div>
+
+            <ul class="list-cards">
+                <li class="card">
+                    <span>R$ 40,00</span>
+                    <div>
+                        <button class="button-greylow">Entrada</button>
+                        <img src="../../assets/img/trash.svg" alt="">
+                    </div>
+                </li>
+                <li class="card">
+                    <span>R$ 20,00</span>
+                    <div>
+                        <button class="button-greylow">Saída</button>
+                        <img src="../../assets/img/trash.svg" alt="">
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <div class="container-modal">
+        <div class="modal">
+            <div class="header-modal">
+                <h2>Registro de valor</h2>
+                <button class="button-greylow">X</button>
+            </div>
+            <p>Digite o valor e em seguida aperte no botão referente ao tipo do valor</p>
+            <h3>Valor</h3>
+            <input type="number" placeholder="R$  00,00">
+            <div class="type-value">
+                <h3>Tipo de valor</h3>
+                <button class="button-outline">Entrada</button>
+                <button class="button-outline">Saída</button>
+            </div>
+            <div class="buttons-modal">
+                <button class="button-greylow">Cancelar</button>
+                <button class="button-primary">Inserir valor</button>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
