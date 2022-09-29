@@ -8,8 +8,6 @@
     padding: 1rem 0 1rem 0;
     border-radius: var(--radius-1);
     border: 2px dashed var(--color-stroke);
-    /* display: none; */
-
 }
 
 .empty-list:hover {
@@ -41,24 +39,35 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    /* justify-content:space-between; */
     border-radius: var(--radius-1);
 }
 
-.card button {
+.card>div>span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 4.5rem;
     height: 1.625rem;
     border-radius: var(--radius-2);
 }
 
-.trash-img{
+.card button {
+    background: none;
+    border-radius: var(--radius-2);
+    width: min-content;
+    padding: 0;
+    border: none;
+}
+
+.trash-img {
     background-image: url("../../assets/img/trash.svg");
     width: 29px;
     height: 26px;
+    border-radius: var(--radius-2);
+    border: none;
 }
 
-.trash-img:hover{
+.trash-img:hover {
     background-image: url("../../assets/img/trash-hover.svg");
-   cursor: pointer;
+    cursor: pointer;
 }
-

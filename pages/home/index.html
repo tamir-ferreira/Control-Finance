@@ -11,19 +11,21 @@
     <link rel="stylesheet" href="/styles/globalStyles.css">
     <link rel="stylesheet" href="/styles/cards.css">
     <link rel="stylesheet" href="/styles/filter-totalizer.css">
-    <link rel="stylesheet" href="/styles/modal.css">
     <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+    <link rel="stylesheet" href="/styles/buttons.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/styles/mobile.css">
     <script defer src="/scripts/modal.js"></script>
     <script defer src="valuesData.js"></script>
     <script defer src="index.js"></script>
 </head>
- 
+
 <body>
     <header>
         <nav class="container">
             <h1>Control <span>Finance</span></h1>
-            <button class="button-primary" data-modal-control="modal-control">Registrar novo valor</button>
+            <button data-modal-control="modal-control" class="button-primary"> Registrar novo valor </button>
         </nav>
     </header>
 
@@ -32,13 +34,13 @@
             <h2>Resumo financeiro</h2>
             <ul class="list-filter">
                 <li>
-                    <button data-filter-button="all-button" class="button-pressed button-outline">Todos</button>
+                    <button data-filter-button="all-button" class="button-pressed button-outline"> Todos </button>
                 </li>
                 <li>
-                    <button data-filter-button="in-button" class="button-outline">Entradas</button>
+                    <button data-filter-button="in-button" class="button-outline"> Entradas </button>
                 </li>
                 <li>
-                    <button data-filter-button="out-button" class="button-outline">Saídas</button>
+                    <button data-filter-button="out-button" class="button-outline"> Saídas </button>
                 </li>
             </ul>
         </section>
@@ -53,42 +55,31 @@
             </div>
 
             <ul class="list-cards">
-                <!-- <li class="card">
-                    <span>R$ 40,00</span>
-                    <div>
-                        <button class="button-greylow">Entrada</button>
-                        <img src="../../assets/img/trash.svg" alt="lixeira">
-                    </div>
-                </li>
-                <li class="card">
-                    <span>R$ 20,00</span>
-                    <div>
-                        <button class="button-greylow">Saída</button>
-                        <img src="../../assets/img/trash.svg" alt="lixeira">
-                    </div>
-                </li> -->
+                <!-- CARDS RENDERIZADOS PELO JS -->
             </ul>
         </section>
     </main>
 
+    <!------------ MODAL ------------>
     <div class="container-modal" id="open-modal">
         <div class="modal">
             <div class="header-modal">
                 <h2>Registro de valor</h2>
-                <button class="button-greylow" data-modal-control="modal-control">X</button>
+                <button class="button-greylow" data-modal-control="modal-control"> X </button>
             </div>
             <p>Digite o valor e em seguida aperte no botão referente ao tipo do valor</p>
             <form>
                 <label for="input-value">Valor</label>
-                <input id="input-value" type="number" placeholder="R$  00,00" required>
+                <input id="input-value" type="number" placeholder="R$  00,00"
+                    onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
                 <div class="type-value">
                     <h3>Tipo de valor</h3>
-                    <button data-type-button="in-button" type="button" class="button-outline">Entrada</button>
-                    <button data-type-button="out-button" type="button" class="button-outline">Saída</button>
+                    <button data-type-button="in-button" type="button" class="button-outline"> Entrada </button>
+                    <button data-type-button="out-button" type="button" class="button-outline"> Saída </button>
                 </div>
                 <div class="buttons-modal">
-                    <button type="button" class="button-greylow" data-modal-control="modal-control">Cancelar</button>
-                    <button type="button" id="button-insert" class="button-primary">Inserir valor</button>
+                    <button type="button" class="button-greylow" data-modal-control="modal-control"> Cancelar </button>
+                    <button type="button" id="button-insert" class="button-primary"> Inserir valor </button>
                 </div>
             </form>
         </div>

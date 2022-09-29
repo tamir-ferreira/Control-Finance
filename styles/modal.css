@@ -9,8 +9,6 @@
     justify-content: center;
     background-color: var(--color-grey-1-opacity-5);
     display: none;
-    /* transform: translateY(-100vh); */
-    /* transition: 2s ease; */
 }
 
 .show-modal {
@@ -19,7 +17,6 @@
 }
 
 .modal {
-    /* border: 1px solid red; */
     width: 26.75rem;
     margin: 0 auto;
     border-radius: var(--radius-1);
@@ -38,7 +35,6 @@
     width: 2.18rem;
     height: 1.875rem;
     border-radius: var(--radius-2);
-
 }
 
 .modal p {
@@ -75,12 +71,12 @@
 
 @keyframes animateModal {
     0% {
-      opacity: 0;
-      transform: translateY(-100vh);
+        opacity: 0;
+        transform: translateY(-100vh);
     }
 
     100% {
-      opacity: 1;
-      transform: translateY(0px)
+        opacity: 1;
+        transform: translateY(0px)
     }
-  }
+}
