@@ -18,12 +18,12 @@
     <script defer src="valuesData.js"></script>
     <script defer src="index.js"></script>
 </head>
-
+ 
 <body>
     <header>
         <nav class="container">
             <h1>Control <span>Finance</span></h1>
-            <button class="button-primary">Registrar novo valor</button>
+            <button class="button-primary" data-modal-control="modal-control">Registrar novo valor</button>
         </nav>
     </header>
 
@@ -31,58 +31,66 @@
         <section class="section-filter">
             <h2>Resumo financeiro</h2>
             <ul class="list-filter">
-                <li><button class="button-outline">Todos</button></li>
-                <li><button class="button-outline">Entradas</button></li>
-                <li><button class="button-outline">Saídas</button></li>
+                <li>
+                    <button data-filter-button="all-button" class="button-outline">Todos</button>
+                </li>
+                <li>
+                    <button data-filter-button="in-button" class="button-outline">Entradas</button>
+                </li>
+                <li>
+                    <button data-filter-button="out-button" class="button-outline">Saídas</button>
+                </li>
             </ul>
         </section>
         <section class="totalizer">
             <h3>Soma dos valores</h3>
-            <span>R$ 969,00</span>
+            <span>R$ 00,00</span>
         </section>
         <section class="section-cards">
-            <div class="empty-list">
+            <div class="empty-list" data-modal-control="modal-control">
                 <h3>Nenhum valor cadastrado</h3>
                 <p>Registrar novo valor</p>
             </div>
 
             <ul class="list-cards">
-                <li class="card">
+                <!-- <li class="card">
                     <span>R$ 40,00</span>
                     <div>
                         <button class="button-greylow">Entrada</button>
-                        <img src="../../assets/img/trash.svg" alt="">
+                        <img src="../../assets/img/trash.svg" alt="lixeira">
                     </div>
                 </li>
                 <li class="card">
                     <span>R$ 20,00</span>
                     <div>
                         <button class="button-greylow">Saída</button>
-                        <img src="../../assets/img/trash.svg" alt="">
+                        <img src="../../assets/img/trash.svg" alt="lixeira">
                     </div>
-                </li>
+                </li> -->
             </ul>
         </section>
     </main>
 
-    <div class="container-modal">
+    <div class="container-modal" id="open-modal">
         <div class="modal">
             <div class="header-modal">
                 <h2>Registro de valor</h2>
-                <button class="button-greylow">X</button>
+                <button class="button-greylow" data-modal-control="modal-control">X</button>
             </div>
             <p>Digite o valor e em seguida aperte no botão referente ao tipo do valor</p>
-            <h3>Valor</h3>
-            <input type="number" placeholder="R$  00,00">
-            <div class="type-value">
-                <h3>Tipo de valor</h3>
-                <button class="button-outline">Entrada</button>
-                <button class="button-outline">Saída</button>
-            </div>
-            <div class="buttons-modal">
-                <button class="button-greylow">Cancelar</button>
-                <button class="button-primary">Inserir valor</button>
-            </div>
+            <form>
+                <label for="input-value">Valor</label>
+                <input id="input-value" type="number" placeholder="R$  00,00" required>
+                <div class="type-value">
+                    <h3>Tipo de valor</h3>
+                    <button data-type-button="in-button" type="button" class="button-outline">Entrada</button>
+                    <button data-type-button="out-button" type="button" class="button-outline">Saída</button>
+                </div>
+                <div class="buttons-modal">
+                    <button type="button" class="button-greylow" data-modal-control="modal-control">Cancelar</button>
+                    <button type="button" id="button-insert" class="button-primary">Inserir valor</button>
+                </div>
+            </form>
         </div>
     </div>
 

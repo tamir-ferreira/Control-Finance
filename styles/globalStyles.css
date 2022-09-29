@@ -19,6 +19,7 @@
   --color-grey-1-opacity-5: rgba(0, 0, 0, 0.5);
   --fixed-white: #ffffff;
   --color-mode: #ffffff;
+  --color-stroke: #ADB5BD;
 
   --font-size-1: 1.25rem;
   --font-size-2: 1rem;
@@ -44,6 +45,8 @@
 body {
   font-family: var(--font-family-1);
   color: var(--color-grey-1);
+  cursor: default;
+  user-select: none;
 }
 
 .container {
@@ -69,7 +72,7 @@ span:not(h1 > span) {
   font-weight: 500;
 }
 
-p{
+p {
   color: var(--color-grey-2);
   font-size: var(--font-size-4);
 }
@@ -84,10 +87,14 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-    /* font-weight: 600; */
+  font-weight: var(--font-weight-1);
 }
 
-ul{
+button:hover:not(.card button) {
+  cursor: pointer;
+}
+
+ul {
   list-style: none;
 }
 
@@ -108,7 +115,7 @@ ul{
   border-color: var(--color-grey-5);
 }
 
-.button-greylow:hover {
+.button-greylow:hover:not(.card button) {
   color: var(--color-grey-1);
   background-color: var(--color-grey-4);
   border-color: var(--color-grey-4);
@@ -120,10 +127,13 @@ ul{
   border-color: var(--color-grey-5);
 }
 
-.button-outline:hover,
-.button-outline:active {
+.button-outline:hover {
   color: var(--color-brand-1);
-  background-color: var(--color-brand-3);
+  border-color: var(--color-brand-1);
+}
+
+.button-pressed {
+  color: var(--color-brand-1);
   border-color: var(--color-brand-1);
 }
 

@@ -7,7 +7,14 @@
     background-color: var(--color-grey-5);
     padding: 1rem 0 1rem 0;
     border-radius: var(--radius-1);
-    display: none;
+    border: 2px dashed var(--color-stroke);
+    /* display: none; */
+
+}
+
+.empty-list:hover {
+    background-color: var(--color-grey-4);
+    cursor: pointer;
 }
 
 .list-cards {
@@ -23,6 +30,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-radius: var(--radius-1);
+}
+
+.card:hover {
+    border: 1.5px solid var(--color-brand-1);
 }
 
 .card>div {
@@ -38,3 +50,15 @@
     height: 1.625rem;
     border-radius: var(--radius-2);
 }
+
+.trash-img{
+    background-image: url("../../assets/img/trash.svg");
+    width: 29px;
+    height: 26px;
+}
+
+.trash-img:hover{
+    background-image: url("../../assets/img/trash-hover.svg");
+   cursor: pointer;
+}
+
