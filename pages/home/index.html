@@ -71,7 +71,7 @@
             <form>
                 <label for="input-value">Valor</label>
                 <input id="input-value" type="number" placeholder="R$  00,00"
-                    onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+                    onkeypress='return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 44' required>
                 <div class="type-value">
                     <h3>Tipo de valor</h3>
                     <button data-type-button="in-button" type="button" class="button-outline"> Entrada </button>
