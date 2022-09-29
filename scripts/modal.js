@@ -34,7 +34,7 @@ function insertItems() {
     });
 
     buttonInsert.onclick = () => {
-        if (categoryTemp != null) {
+        if (categoryTemp != null && inputValue.valueAsNumber > 0) {
             const newValue = {
                 id: insertedValues.length + 1,
                 value: inputValue.valueAsNumber,
