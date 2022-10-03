@@ -39,7 +39,7 @@ function renderItems(array, variation = false) {
 /* ------- FUNÇÃO SOMAR VALORES DO ARRAY ---------- */
 function sumTotal(array) {
     let sum = 0;
-    array.forEach(element => sum = (element.categoryID == 0) ? sum + element.value : sum - element.value);
+    array.forEach(element => sum += element.value);
     return sum;
 }
 

@@ -1,6 +1,6 @@
 const buttonModal = document.querySelectorAll('[data-modal-control]');
 const containerModal = document.querySelector('.container-modal');
-
+let count = 1;
 
 /* ----------- ABRIR E FECHAR MODAL ------------ */
 buttonModal.forEach(element => {
@@ -36,7 +36,7 @@ function insertItems() {
     buttonInsert.onclick = () => {
         if (categoryTemp != null && inputValue.valueAsNumber > 0) {
             const newValue = {
-                id: insertedValues.length + 1,
+                id: count,
                 value: inputValue.valueAsNumber,
                 categoryID: categoryTemp,
             }
@@ -45,8 +45,11 @@ function insertItems() {
             selectType(filterTypes());
             mapItems();
             emptyList.style.display = 'none';
+            containerModal.classList.toggle('show-modal')
+            count++;
         }
     }
     categoryTemp = null
     inputValue.value = '';
+
 }
